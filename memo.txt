@@ -1,0 +1,9 @@
+仮想環境入るコマンド
+conda activate flask_env
+
+データベースやるとき
+flask db init
+flask db migrate
+flask db upgrade
+
+flask db downgrade
