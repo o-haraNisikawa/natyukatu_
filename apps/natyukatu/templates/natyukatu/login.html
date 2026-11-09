@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ログイン | 画面タイトル</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 90 64" role="img" aria-label="共通ロゴ">
+        <defs>
+          <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#168df2"/><stop offset="1" stop-color="#0066c9"/>
+          </linearGradient>
+          <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#08bcae"/><stop offset="1" stop-color="#008c8b"/>
+          </linearGradient>
+        </defs>
+        <path d="M7 31 31 7q4-4 8 0l20 20-24 24q-4 4-8 0L7 35q-2-2 0-4Z" fill="url(#blue)"/>
+        <path d="m34 31 24-24q4-4 8 0l20 20q3 3 0 6L62 57q-4 4-8 0L34 37q-3-3 0-6Z" fill="url(#teal)" opacity=".96"/>
+        <path d="m37 29 9-9 15 15-9 9Z" fill="#fff" opacity=".88"/>
+      </svg>
+      <div class="brand-title">画面タイトル</div>
+    </div>
+    <div class="topbar-spacer"></div>
+    <button class="header-login" type="button" onclick="document.getElementById('loginId').focus()">ログイン</button>
+  </header>
+
+  <div class="page">
+    <aside class="empty-rail" aria-hidden="true"></aside>
+    <main class="main-area">
+      <form class="login-card" id="loginForm">
+        <h1>ログイン</h1>
+        <div class="field">
+          <label for="loginId">ログインID</label>
+          <input id="loginId" name="loginId" type="text" autocomplete="username" required>
+        </div>
+        <div class="field">
+          <label for="password">パスワード</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+        </div>
+        <label class="show-password">
+          <input id="showPassword" type="checkbox">
+          パスワードを表示
+        </label>
+        <button class="submit" type="submit">ログイン</button>
+        <p class="notice" id="notice" role="status">ログイン機能はまだ接続されていません。</p>
+        <p class="signup">アカウントをお持ちでない方<br><a href="register.html">新規登録</a></p>
+      </form>
+    </main>
+  </div>
+
+  <script>
+    const password = document.getElementById('password');
+    document.getElementById('showPassword').addEventListener('change', event => {
+      password.type = event.target.checked ? 'text' : 'password';
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', event => {
+      event.preventDefault();
+      location.href = 'top.html';
+    });
+  </script>
+</body>
+</html>

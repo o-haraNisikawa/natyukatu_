@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <title>natyukatu</title>
+    <!--<link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    />
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    />-->
+</head>
+
+<body>
+  <!-- ナビゲーションバーを作成する -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand"
+       href="{{ url_for('natyukatu.top') }}">reviewer</a>
+     
+      <ul class="navbar-nav">
+    <!--ログイン中-->
+        {% if current_user.is_authenticated %}
+        <!--ユーザー名-->
+          <li class="nav-item">
+            <span class="nav-link">{{ current_user.username }}</span>
+          </li>
+        <!--ログアウト-->
+          <li class="nav-item">
+            <a href="{{ url_for('auth.logout') }}" class="nav-link">ログアウト</a>
+          </li>
+        <!--募集者のみ表示-->
+        {% if current_user.status == 2 %}
+          <!--新規募集登録-->
+           <li class="nav-item">
+               <a href="{{ url_for('natyukatu.newRecruitment') }}" class="nav-link">新規募集登録</a>
+           </li>
+        {% endif %}   
+        <!--称号-->
+          <li class="nav-item">
+            <span class="nav-link">{{ current_user.usertitle }}</span>
+          </li>
+        <!--お問い合わせ-->
+           <li class="nav-item">
+            <a href="{{ url_for('natyukatu.contact') }}" class="nav-link">お問い合わせ</a>
+          </li>
+        <!--ランキング-->
+          <li class="nav-item">
+            <a href="{{ url_for('natyukatu.ranking') }}" class="nav-link">ランキング</a>
+          </li>
+        <!--ユーザー管理画面-->
+          <li class="nav-item">
+            <a href="{{ url_for('natyukatu.userDetail') }}" class="nav-link">ユーザー管理画面</a>
+          </li>
+        {% else %}
+    <!--ログアウト中-->
+        <!--新規登録-->
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('auth.signup') }}">新規登録</a>
+          </li>
+        <!--ログイン-->
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('auth.login') }}">ログイン</a>
+          </li>
+        <!--お問い合わせ-->
+           <li class="nav-item">
+            <a href="{{ url_for('natyukatu.contact') }}" class="nav-link">お問い合わせ</a>
+          </li>
+        <!--ランキング-->
+          <li class="nav-item">
+            <a href="{{ url_for('natyukatu.ranking') }}" class="nav-link">ランキング</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <!-- block contentをsection class="container"で囲む -->
+  <section class="container">
+    {% block content %}{% endblock %}
+  </section>
+
+      <!-- フッター -->
+    <footer class="text-muted py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#">上に戻る</a>
+        </p>
+        <!-- フッターのテキストを任意のものに書き換え-->
+        <p class="mb-1">
+          natyukatu is &copy; yes!</p>
+      </div>
+    </footer>
+
+</body>
+</html>

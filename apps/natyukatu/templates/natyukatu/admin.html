@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>管理者用画面 | 画面タイトル</title>
+  <link rel="stylesheet" href="admin-management.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="top.html" aria-label="トップ画面"><svg class="logo" viewBox="0 0 90 64" aria-hidden="true"><defs><linearGradient id="lb" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#168df2"/><stop offset="1" stop-color="#0066c9"/></linearGradient><linearGradient id="lt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#08bcae"/><stop offset="1" stop-color="#008c8b"/></linearGradient></defs><path d="M7 31 31 7q4-4 8 0l20 20-24 24q-4 4-8 0L7 35q-2-2 0-4Z" fill="url(#lb)"/><path d="m34 31 24-24q4-4 8 0l20 20q3 3 0 6L62 57q-4 4-8 0L34 37q-3-3 0-6Z" fill="url(#lt)"/><path d="m37 29 9-9 15 15-9 9Z" fill="#fff" opacity=".88"/></svg><span class="brand-title">画面タイトル</span></a>
+    <div class="spacer"></div><span class="admin-label">管理者</span><div class="account"><span class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c.5-4 3.2-6 8-6s7.5 2 8 6"/></svg></span><span>ログインユーザー名</span><i class="chevron"></i></div><a class="logout" href="logout-confirm.html">ログアウト</a>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" aria-label="管理メニュー"><nav class="nav">
+      <a class="nav-link" href="top.html"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10h-6v-7H9v7H4v-9Z"/></svg><span>トップ画面</span></a>
+      <a class="nav-link active" href="admin-management.html"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21c.5-4 2.8-6 7-6 2.5 0 4.4.6 5.7 1.8M16 11a3.5 3.5 0 1 0 0-7M16 15c3.7 0 5.7 2 6 6"/></svg><span>ユーザー管理</span></a>
+      <a class="nav-link" href="#recruitment"><svg viewBox="0 0 24 24"><path d="M6 3h9l5 5v13H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M14 3v6h6M8 13h8M8 17h8"/></svg><span>募集管理</span></a>
+    </nav><div class="divider"></div><a class="nav-link" href="logout-confirm.html"><svg viewBox="0 0 24 24"><path d="M10 17l5-5-5-5M15 12H3"/><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7"/></svg><span>ログアウト</span></a></aside>
+    <main>
+      <h1 class="page-title">管理者用画面</h1>
+      <section class="admin-card">
+        <div class="tabs" role="tablist" aria-label="管理対象">
+          <button class="tab active" id="usersTab" role="tab" aria-selected="true" aria-controls="usersPanel"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21c.5-4 2.8-6 7-6s6.5 2 7 6M16 11a3.5 3.5 0 1 0 0-7M16 15c3.7 0 5.7 2 6 6"/></svg>ユーザー一覧</button>
+          <button class="tab" id="recruitmentTab" role="tab" aria-selected="false" aria-controls="recruitmentPanel"><svg viewBox="0 0 24 24"><path d="M6 3h9l5 5v13H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M14 3v6h6M8 13h8M8 17h8"/></svg>募集一覧</button>
+        </div>
+        <section class="list-panel" id="usersPanel" role="tabpanel" aria-labelledby="usersTab">
+          <form class="search-panel" id="userSearch">
+            <div><label class="field-label" for="userTarget">管理対象</label><select class="control" id="userTarget"><option>参加者</option><option>募集者</option></select></div>
+            <div><label class="field-label" for="userKeyword">ユーザーID・名前で検索</label><input class="control" id="userKeyword" placeholder="ユーザーID・名前を入力してください"></div>
+            <button class="search-button" type="submit"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg>検索</button>
+          </form>
+          <h2 class="list-title">管理対象一覧</h2>
+          <div class="table-wrap"><table><colgroup><col class="col-w-22"><col class="col-w-28"><col class="col-w-13"><col class="col-w-21"><col class="col-w-16"></colgroup><thead><tr><th>ユーザーID</th><th>ユーザーニックネーム</th><th>年齢</th><th>称号</th><th>操作</th></tr></thead><tbody>
+            <tr><td><i class="skeleton"></i></td><td><i class="skeleton medium"></i></td><td><i class="skeleton short"></i></td><td><i class="skeleton medium"></i></td><td><button class="delete-button" type="button">削除</button></td></tr>
+            <tr><td><i class="skeleton"></i></td><td><i class="skeleton medium"></i></td><td><i class="skeleton short"></i></td><td><i class="skeleton medium"></i></td><td><button class="delete-button" type="button">削除</button></td></tr>
+            <tr><td><i class="skeleton"></i></td><td><i class="skeleton medium"></i></td><td><i class="skeleton short"></i></td><td><i class="skeleton medium"></i></td><td><button class="delete-button" type="button">削除</button></td></tr>
+            <tr><td><i class="skeleton"></i></td><td><i class="skeleton medium"></i></td><td><i class="skeleton short"></i></td><td><i class="skeleton medium"></i></td><td><button class="delete-button" type="button">削除</button></td></tr>
+            <tr><td><i class="skeleton"></i></td><td><i class="skeleton medium"></i></td><td><i class="skeleton short"></i></td><td><i class="skeleton medium"></i></td><td><button class="delete-button" type="button">削除</button></td></tr>
+          </tbody></table></div>
+        </section>
+        <section class="list-panel" id="recruitmentPanel" role="tabpanel" aria-labelledby="recruitmentTab" hidden>
+          <form class="search-panel" id="recruitmentSearch">
+            <div><label class="field-label" for="recruitmentTarget">管理対象</label><select class="control" id="recruitmentTarget"><option>募集</option></select></div>
+            <div><label class="field-label" for="recruitmentKeyword">募集名で検索</label><input class="control" id="recruitmentKeyword" placeholder="募集名を入力してください"></div>
+            <button class="search-button" type="submit"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg>検索</button>
+          </form>
+          <h2 class="list-title">募集一覧</h2>
+          <div class="table-wrap"><table><colgroup><col class="col-w-20"><col class="col-w-28"><col class="col-w-20"><col class="col-w-16"><col class="col-w-16"></colgroup><thead><tr><th>募集ID</th><th>募集名</th><th>募集者</th><th>状態</th><th>操作</th></tr></thead><tbody>
+            <tr><td><i class="skeleton"></i></td><td><i class="skeleton medium"></i></td><td><i class="skeleton"></i></td><td><i class="skeleton short"></i></td><td><button class="delete-button" type="button">削除</button></td></tr>
+            <tr><td><i class="skeleton"></i></td><td><i class="skeleton medium"></i></td><td><i class="skeleton"></i></td><td><i class="skeleton short"></i></td><td><button class="delete-button" type="button">削除</button></td></tr>
+            <tr><td><i class="skeleton"></i></td><td><i class="skeleton medium"></i></td><td><i class="skeleton"></i></td><td><i class="skeleton short"></i></td><td><button class="delete-button" type="button">削除</button></td></tr>
+            <tr><td><i class="skeleton"></i></td><td><i class="skeleton medium"></i></td><td><i class="skeleton"></i></td><td><i class="skeleton short"></i></td><td><button class="delete-button" type="button">削除</button></td></tr>
+            <tr><td><i class="skeleton"></i></td><td><i class="skeleton medium"></i></td><td><i class="skeleton"></i></td><td><i class="skeleton short"></i></td><td><button class="delete-button" type="button">削除</button></td></tr>
+          </tbody></table></div>
+        </section>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+  </div>
+  <script>
+    const usersTab=document.getElementById('usersTab'), recruitmentTab=document.getElementById('recruitmentTab');
+    function showPanel(panelName){
+      const users=panelName==='users';
+      usersTab.classList.toggle('active',users);recruitmentTab.classList.toggle('active',!users);
+      usersTab.setAttribute('aria-selected',String(users));recruitmentTab.setAttribute('aria-selected',String(!users));
+      document.getElementById('usersPanel').hidden=!users;document.getElementById('recruitmentPanel').hidden=users;
+      document.getElementById('status').textContent='';
+    }
+    usersTab.addEventListener('click',()=>showPanel('users'));recruitmentTab.addEventListener('click',()=>showPanel('recruitment'));
+    document.querySelectorAll('.search-panel').forEach(form=>form.addEventListener('submit',event=>{event.preventDefault();document.getElementById('status').textContent='検索条件に合わせて一覧を表示します（画面見本）';}));
+    document.querySelectorAll('.delete-button').forEach(button=>button.addEventListener('click',()=>{if(confirm('この対象を削除しますか？（画面見本）'))document.getElementById('status').textContent='削除操作を選択しました（画面見本）';}));
+  </script>
+</body>
+</html>
+

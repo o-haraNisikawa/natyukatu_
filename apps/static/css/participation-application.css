@@ -1,0 +1,72 @@
+:root {
+      --navy:#102b55;
+      --blue:#0788f5;
+      --teal:#08aaa5;
+      --line:#dce6f2;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      min-height:100vh;
+      color:var(--navy);
+      font-family:"Yu Gothic UI","Meiryo",system-ui,sans-serif;
+      background:linear-gradient(135deg,#f7faff 0%,#f1f7fc 100%);
+    }
+    button { font:inherit; }
+    .topbar {
+      height:94px;
+      display:flex;
+      align-items:center;
+      gap:28px;
+      padding:0 30px;
+      background:rgba(255,255,255,.97);
+      border-bottom:1px solid #e8eef5;
+      box-shadow:0 3px 14px rgba(20,49,81,.05);
+    }
+    .brand { display:flex; align-items:center; gap:28px; }
+    .logo { width:72px; height:54px; flex:0 0 auto; }
+    .brand-title { border-left:2px solid #e3eaf3; padding-left:28px; font-size:27px; font-weight:800; white-space:nowrap; }
+    .spacer { flex:1; }
+    .account { display:flex; align-items:center; gap:13px; padding-left:26px; border-left:2px solid #e4ebf4; font-weight:700; white-space:nowrap; }
+    .user-icon { width:44px; height:44px; display:grid; place-items:center; color:#3677bc; background:#e7f0fb; border-radius:50%; }
+    .account-name { display:flex; gap:12px; align-items:center; }
+    .header-logout { color:var(--blue); background:#fff; border:1.5px solid var(--blue); border-radius:9px; padding:12px 28px; font-weight:800; margin-left:8px; cursor:pointer; }
+    .layout { display:grid; grid-template-columns:285px minmax(0,1fr); min-height:calc(100vh - 94px); }
+    .sidebar { background:rgba(255,255,255,.82); border-right:1px solid var(--line); padding:32px 11px; }
+    .rank { color:#8395ac; font-weight:700; padding:12px 18px 20px; }
+    .nav { display:flex; align-items:center; gap:18px; padding:15px 22px; margin:4px 0; border-radius:8px; color:var(--navy); text-decoration:none; font-size:18px; font-weight:750; }
+    .nav svg { width:25px; height:25px; flex:0 0 auto; stroke:currentColor; }
+    .nav.active { color:var(--blue); background:linear-gradient(90deg,#e9f4ff,#f0f7ff); box-shadow:inset 4px 0 0 var(--blue); }
+    .divider { height:1px; background:var(--line); margin:18px; }
+    main { padding:30px 27px; }
+    h1 { margin:0 0 22px 16px; font-size:36px; }
+    .placeholder { height:108px; margin-bottom:20px; border:1px solid #e1eaf4; border-radius:12px; background:rgba(255,255,255,.8); }
+    .shade { position:fixed; inset:0; z-index:10; display:grid; place-items:center; padding:20px; background:rgba(18,35,58,.48); }
+    .dialog { width:min(100%,580px); padding:54px 48px 46px; border-radius:15px; background:#fff; box-shadow:0 24px 70px rgba(9,25,48,.24); text-align:center; }
+    .dialog h2 { margin:0 0 52px; font-size:31px; letter-spacing:.01em; }
+    .actions { display:flex; justify-content:center; gap:14px; }
+    .actions button { min-width:235px; height:66px; border-radius:9px; font-size:20px; font-weight:800; cursor:pointer; }
+    .cancel { border:1.5px solid #aebcd0; color:var(--navy); background:#fff; }
+    .confirm { border:1.5px solid var(--blue); color:#fff; background:var(--blue); }
+    @media (max-width:760px) {
+      .topbar { height:74px; padding:0 14px; gap:10px; }
+      .brand { gap:12px; }
+      .logo { width:48px; height:40px; }
+      .brand-title { padding-left:12px; font-size:18px; }
+      .account { padding-left:10px; gap:6px; font-size:12px; }
+      .user-icon { width:34px; height:34px; }
+      .header-logout { padding:8px 10px; font-size:12px; }
+      .layout { grid-template-columns:190px minmax(0,1fr); min-height:calc(100vh - 74px); }
+      .nav { padding:12px; gap:9px; font-size:14px; }
+      .dialog { padding:40px 24px 30px; }
+      .dialog h2 { margin-bottom:32px; font-size:25px; }
+      .actions { flex-direction:column-reverse; }
+      .actions button { width:100%; min-width:0; height:56px; font-size:17px; }
+    }
+    @media (max-width:520px) {
+      .account-name { display:none; }
+      .layout { grid-template-columns:1fr; }
+      .sidebar { display:none; }
+      main { padding:22px 14px; }
+      h1 { font-size:28px; margin-left:2px; }
+    }

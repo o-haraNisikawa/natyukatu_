@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>新規登録 | 画面タイトル</title>
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 90 64" role="img" aria-label="共通ロゴ">
+        <defs>
+          <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#168df2"/><stop offset="1" stop-color="#0066c9"/>
+          </linearGradient>
+          <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#08bcae"/><stop offset="1" stop-color="#008c8b"/>
+          </linearGradient>
+        </defs>
+        <path d="M7 31 31 7q4-4 8 0l20 20-24 24q-4 4-8 0L7 35q-2-2 0-4Z" fill="url(#blue)"/>
+        <path d="m34 31 24-24q4-4 8 0l20 20q3 3 0 6L62 57q-4 4-8 0L34 37q-3-3 0-6Z" fill="url(#teal)" opacity=".96"/>
+        <path d="m37 29 9-9 15 15-9 9Z" fill="#fff" opacity=".88"/>
+      </svg>
+      <div class="brand-title">画面タイトル</div>
+    </div>
+    <div class="topbar-spacer"></div>
+    <button class="header-login" type="button" onclick="location.href='login.html'">ログイン</button>
+  </header>
+
+  <div class="page">
+    <aside class="empty-rail" aria-hidden="true"></aside>
+    <main class="main-area">
+      <form class="register-card" id="registerForm">
+        <h1>新規登録</h1>
+        <div class="fields">
+          <div class="field">
+            <div class="label-line"><label for="userName">ユーザー名</label><span class="required">必須</span></div>
+            <input id="userName" name="userName" type="text" placeholder="ユーザー名を入力してください" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <div class="label-line"><label for="email">メールアドレス</label><span class="required">必須</span></div>
+            <input id="email" name="email" type="email" placeholder="メールアドレスを入力してください" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <div class="label-line"><label for="password">パスワード</label><span class="required">必須</span></div>
+            <div class="password-wrap">
+              <input id="password" name="password" type="password" placeholder="パスワードを入力してください" autocomplete="new-password" required>
+              <button class="password-toggle" id="passwordToggle" type="button" aria-label="パスワードを表示" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="field">
+            <div class="label-line"><label for="phone">電話番号</label><span class="required">必須</span></div>
+            <input id="phone" name="phone" type="tel" placeholder="電話番号を入力してください" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <div class="label-line"><label for="age">年齢</label><span class="required">必須</span></div>
+            <input id="age" name="age" type="number" min="0" placeholder="年齢を入力してください" required>
+          </div>
+          <div class="field">
+            <div class="label-line"><label for="nickname">ニックネーム</label><span class="required">必須</span></div>
+            <input id="nickname" name="nickname" type="text" placeholder="ニックネームを入力してください" required>
+          </div>
+        </div>
+        <button class="submit" type="submit">登録する</button>
+        <p class="notice" id="notice" role="status">登録処理はまだ接続されていません。</p>
+      </form>
+    </main>
+  </div>
+
+  <script>
+    const passwordInput = document.getElementById('password');
+    const passwordToggle = document.getElementById('passwordToggle');
+
+    passwordToggle.addEventListener('click', () => {
+      const show = passwordInput.type === 'password';
+      passwordInput.type = show ? 'text' : 'password';
+      passwordToggle.setAttribute('aria-pressed', String(show));
+      passwordToggle.setAttribute('aria-label', show ? 'パスワードを隠す' : 'パスワードを表示');
+    });
+
+    document.getElementById('registerForm').addEventListener('submit', event => {
+      event.preventDefault();
+      location.href = 'top.html';
+    });
+  </script>
+</body>
+</html>

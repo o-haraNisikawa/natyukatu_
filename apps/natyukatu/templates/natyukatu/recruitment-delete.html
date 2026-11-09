@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>募集情報削除 | 画面タイトル</title>
+  <link rel="stylesheet" href="recruitment-delete.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="top.html" aria-label="トップ画面">
+      <svg class="logo" viewBox="0 0 90 64" aria-hidden="true">
+        <defs><linearGradient id="logoBlue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#168df2"/><stop offset="1" stop-color="#0066c9"/></linearGradient><linearGradient id="logoTeal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#08bcae"/><stop offset="1" stop-color="#008c8b"/></linearGradient></defs>
+        <path d="M7 31 31 7q4-4 8 0l20 20-24 24q-4 4-8 0L7 35q-2-2 0-4Z" fill="url(#logoBlue)"/><path d="m34 31 24-24q4-4 8 0l20 20q3 3 0 6L62 57q-4 4-8 0L34 37q-3-3 0-6Z" fill="url(#logoTeal)" opacity=".96"/><path d="m37 29 9-9 15 15-9 9Z" fill="#fff" opacity=".88"/>
+      </svg>
+      <span class="brand-title">画面タイトル</span>
+    </a>
+    <div class="spacer"></div>
+    <div class="account"><span class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c.5-4 3.2-6 8-6s7.5 2 8 6"/></svg></span><span>ログインユーザー名</span><i class="chevron" aria-hidden="true"></i></div>
+    <a class="logout" href="logout-confirm.html">ログアウト</a>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" aria-label="メインメニュー">
+      <div class="user-badge"><span class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c.5-4 3.2-6 8-6s7.5 2 8 6"/></svg></span><span>称号</span></div>
+      <nav class="nav">
+        <a class="nav-link" href="top.html"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg><span>トップ画面</span></a>
+        <a class="nav-link" href="#contact"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m4 7 8 6 8-6"/></svg><span>お問い合わせ</span></a>
+        <a class="nav-link" href="#ranking"><svg viewBox="0 0 24 24"><path d="M5 20h14l1-11-5 3-3-7-3 7-5-3Z"/><path d="M7 20v2h10v-2"/></svg><span>ランキング</span></a>
+        <a class="nav-link active" href="recruitment-register.html"><svg viewBox="0 0 24 24"><path d="M6 3h9l5 5v13H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M14 3v6h6M8 13h8M8 17h8"/></svg><span>新規募集登録</span></a>
+      </nav>
+      <div class="divider"></div>
+      <a class="nav-link" href="logout-confirm.html"><svg viewBox="0 0 24 24"><path d="M10 17l5-5-5-5M15 12H3"/><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7"/></svg><span>ログアウト</span></a>
+    </aside>
+    <main>
+      <section class="confirm-card" aria-labelledby="confirmTitle">
+        <div class="warning-wrap" aria-hidden="true"><div class="warning-mark">!</div><svg class="rays" viewBox="0 0 200 180"><path d="m19 48 20 12M8 90h25M19 132l20-12M181 48l-20 12M192 90h-25M181 132l-20-12"/></svg></div>
+        <h1 class="confirm-title" id="confirmTitle">募集情報削除</h1>
+        <p class="question">この募集を削除します。よろしいですか？</p>
+        <p class="caution">削除すると元に戻せません。</p>
+        <div class="actions"><a class="button delete" href="recruitment-delete-complete.html">削除する</a><a class="button" href="recruitment-history.html">キャンセル</a></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

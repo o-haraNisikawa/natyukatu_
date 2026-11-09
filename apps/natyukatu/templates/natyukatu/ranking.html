@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ランキング | 画面タイトル</title>
+  <link rel="stylesheet" href="ranking.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="top.html" aria-label="トップ画面"><svg class="logo" viewBox="0 0 90 64" aria-hidden="true"><defs><linearGradient id="lb" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#168df2"/><stop offset="1" stop-color="#0066c9"/></linearGradient><linearGradient id="lt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#08bcae"/><stop offset="1" stop-color="#008c8b"/></linearGradient></defs><path d="M7 31 31 7q4-4 8 0l20 20-24 24q-4 4-8 0L7 35q-2-2 0-4Z" fill="url(#lb)"/><path d="m34 31 24-24q4-4 8 0l20 20q3 3 0 6L62 57q-4 4-8 0L34 37q-3-3 0-6Z" fill="url(#lt)"/><path d="m37 29 9-9 15 15-9 9Z" fill="#fff" opacity=".88"/></svg><span class="brand-title">画面タイトル</span></a>
+    <div class="spacer"></div><div class="account"><span class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c.5-4 3.2-6 8-6s7.5 2 8 6"/></svg></span><span>ログインユーザー名</span><i class="chevron"></i></div><a class="logout" href="logout-confirm.html">ログアウト</a>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" aria-label="メインメニュー"><div class="user-badge"><span class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c.5-4 3.2-6 8-6s7.5 2 8 6"/></svg></span><span>称号</span></div><nav class="nav">
+      <a class="nav-link" href="top.html"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10h-6v-7H9v7H4v-9Z"/></svg><span>トップ画面</span></a>
+      <a class="nav-link" href="activity.html"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v9a2.5 2.5 0 0 1-2.5 2.5H10l-5 4v-4.5a2.5 2.5 0 0 1-1-2Z"/></svg><span>活動用画面</span></a>
+      <a class="nav-link" href="contact.html"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m4 7 8 6 8-6"/></svg><span>お問い合わせ</span></a>
+      <a class="nav-link active" href="ranking.html"><svg viewBox="0 0 24 24"><path d="M5 20h14l1-11-5 3-3-7-3 7-5-3Z"/><path d="M7 20v2h10v-2"/></svg><span>ランキング</span></a>
+    </nav><div class="divider"></div><a class="nav-link" href="logout-confirm.html"><svg viewBox="0 0 24 24"><path d="M10 17l5-5-5-5M15 12H3"/><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7"/></svg><span>ログアウト</span></a></aside>
+    <main>
+      <h1 class="page-title">ランキング</h1>
+      <section class="filter-card" aria-label="ランキングの絞り込み">
+        <div><label class="filter-label" for="period">集計期間</label><select class="select" id="period"><option value="">選択してください</option><option>全期間</option><option>今年</option><option>今月</option></select></div>
+        <div><label class="filter-label" for="target">対象</label><select class="select" id="target"><option value="">選択してください</option><option>全体</option><option>個人</option><option>家族</option><option>団体</option></select></div>
+      </section>
+      <section class="ranking-card" aria-labelledby="rankingTitle">
+        <h2 class="section-title" id="rankingTitle">参加実績ランキング</h2>
+        <div class="table-wrap"><table><colgroup><col class="rank-cell"><col class="user-cell"><col class="points-cell"></colgroup><thead><tr><th scope="col">順位</th><th scope="col">ユーザーニックネーム</th><th scope="col">ポイント</th></tr></thead><tbody>
+          <tr><td><span class="crown-rank first"><svg viewBox="0 0 64 58" aria-hidden="true"><path d="M6 17 20 25 31 4l12 21 15-8-6 35H12Z"/><circle cx="6" cy="15" r="4"/><circle cx="31" cy="4" r="4"/><circle cx="58" cy="15" r="4"/></svg><b>1</b></span></td><td><span class="skeleton user-skeleton"></span></td><td><span class="skeleton points-skeleton"></span></td></tr>
+          <tr><td><span class="crown-rank second"><svg viewBox="0 0 64 58" aria-hidden="true"><path d="M6 17 20 25 31 4l12 21 15-8-6 35H12Z"/><circle cx="6" cy="15" r="4"/><circle cx="31" cy="4" r="4"/><circle cx="58" cy="15" r="4"/></svg><b>2</b></span></td><td><span class="skeleton user-skeleton"></span></td><td><span class="skeleton points-skeleton"></span></td></tr>
+          <tr><td><span class="crown-rank third"><svg viewBox="0 0 64 58" aria-hidden="true"><path d="M6 17 20 25 31 4l12 21 15-8-6 35H12Z"/><circle cx="6" cy="15" r="4"/><circle cx="31" cy="4" r="4"/><circle cx="58" cy="15" r="4"/></svg><b>3</b></span></td><td><span class="skeleton user-skeleton"></span></td><td><span class="skeleton points-skeleton"></span></td></tr>
+        </tbody></table></div>
+        <p class="result" id="result" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+  </div>
+  <script>
+    const period=document.getElementById('period'), target=document.getElementById('target');
+    function updateFilterNotice(){
+      const result=document.getElementById('result');
+      if(period.value||target.value) result.textContent='選択した条件でランキングを表示します（画面見本）';
+      else result.textContent='';
+    }
+    period.addEventListener('change',updateFilterNotice);target.addEventListener('change',updateFilterNotice);
+  </script>
+</body>
+</html>

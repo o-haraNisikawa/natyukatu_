@@ -1,0 +1,189 @@
+:root {
+  --navy: #102b55;
+  --blue: #0788f5;
+  --line: #dce6f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--navy);
+  font-family: "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+  background: linear-gradient(135deg, #f7faff 0%, #f1f7fc 100%);
+}
+
+button {
+  font: inherit;
+}
+
+.topbar {
+  height: 94px;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  background: rgba(255, 255, 255, .97);
+  border-bottom: 1px solid #e8eef5;
+  box-shadow: 0 3px 14px rgba(20, 49, 81, .05);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.logo {
+  width: 72px;
+  height: 54px;
+  flex: 0 0 auto;
+}
+
+.brand-title {
+  border-left: 2px solid #e3eaf3;
+  padding-left: 28px;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.login-link {
+  min-width: 132px;
+  padding: 11px 22px;
+  border: 1.5px solid var(--blue);
+  border-radius: 9px;
+  color: var(--blue);
+  background: #fff;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+}
+
+.layout {
+  min-height: calc(100vh - 94px);
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+}
+
+.empty-rail {
+  border-right: 1px solid var(--line);
+  background: rgba(255, 255, 255, .28);
+}
+
+main {
+  display: grid;
+  place-items: center;
+  padding: 40px 28px;
+}
+
+.complete-card {
+  width: min(100%, 800px);
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+  border: 1px solid #e0e8f1;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .96);
+  box-shadow: 0 12px 34px rgba(29, 63, 103, .06);
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 48px;
+  font-size: 38px;
+  line-height: 1.25;
+}
+
+.message {
+  margin: 0 0 40px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.primary-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 290px;
+  min-height: 66px;
+  padding: 14px 28px;
+  border-radius: 9px;
+  color: #fff;
+  background: linear-gradient(100deg, #087df0, #0789e9);
+  font-size: 21px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: filter .15s;
+}
+
+.primary-link:hover {
+  filter: brightness(1.06);
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    height: 74px;
+    padding: 0 14px;
+  }
+
+  .brand {
+    gap: 12px;
+  }
+
+  .logo {
+    width: 48px;
+    height: 40px;
+  }
+
+  .brand-title {
+    padding-left: 12px;
+    font-size: 18px;
+  }
+
+  .login-link {
+    min-width: 90px;
+    padding: 9px 13px;
+  }
+
+  .layout {
+    min-height: calc(100vh - 74px);
+    grid-template-columns: 36px minmax(0, 1fr);
+  }
+
+  main {
+    padding: 24px 14px;
+  }
+
+  .complete-card {
+    min-height: 320px;
+    padding: 36px 20px;
+  }
+
+  h1 {
+    margin-bottom: 34px;
+    font-size: 31px;
+  }
+
+  .message {
+    margin-bottom: 32px;
+    font-size: 18px;
+  }
+
+  .primary-link {
+    min-width: 0;
+    width: 100%;
+    min-height: 58px;
+    font-size: 18px;
+  }
+}
